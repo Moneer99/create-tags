@@ -13,9 +13,29 @@ function App() {
     }
   };
   return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+    <>
+      <main>
+        <div className="title">
+          <h1>Create a Tags</h1>
+        </div>
+        <section>
+          <div className="tag">
+            {addTags.map((val, index) => {
+              return (
+                <p key={index}>
+                  <label>{val}</label>
+                  <i
+                    className="fa fa-times"
+                    onClick={() => removeTags(index)}
+                  ></i>
+                </p>
+              );
+            })}
+            <input type="text" placeholder="Enter a Key" onKeyUp={createTags} />
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
