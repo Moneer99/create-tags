@@ -12,6 +12,11 @@ function App() {
       e.target.value = "";
     }
   };
+  //removeTags logic
+  const removeTags = (i) => {
+    // Syntax  ====> array.filter((currentValue, index, arr), thisValue)
+    setAddTagas(addTags.filter((a, index) => index !== i));
+  };
   return (
     <>
       <main>
